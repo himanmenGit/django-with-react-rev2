@@ -6,5 +6,6 @@ router = DefaultRouter()
 router.register('post', views.PostViewSet)
 
 urlpatterns = [
+    path('public/', views.PublicPostListApiView.as_view()),
     path('', include(router.urls))
 ]
