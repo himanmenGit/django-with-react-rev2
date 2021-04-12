@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     "rest_framework",
+    "rest_framework.authtoken",
 
     "instagram",
     "accounts",
@@ -132,5 +133,9 @@ REST_FRAMEWORK = {
     'DEFAULT_THROTTLE_RATES': {
         # 'anon': None,
         'user': '4/day'
-    }
+    },
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.SessionAuthentication',
+        'rest_framework.authentication.TokenAuthentication',
+    ]
 }
